@@ -67,12 +67,27 @@ int main()
 
     input = getch();
 
+    if (input==27) { // likely unicode arrow
+        input = getch();
+        if (input == 91) { // '['
+            input = getch();
+            switch(input) {
+                case 65: // 'A'
+                    input = KEY_UP; break;
+                case 66: // 'B'
+                    input = KEY_DOWN; break;
+                case 67: // 'C'
+                    input = KEY_RIGHT; break;
+                case 68: // 'D'
+                    input = KEY_LEFT; break;
+            }
+        }
+    }
     switch (input)
     {
       case 'Q':
         loop_flag = false;
         break;
-
       case 'h':
       case KEY_LEFT:
         cursor.move_cursor('w');

@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -pedantic -Wall -I inc 
 LD = g++
-LDFLAGS = -lncurses
+LDFLAGS = -lncurses -ltinfo
 RM = /bin/rm 
 OBJS = Main.o Logger.o View.o Cell_factory.o Grid.o Cursor.o Status.o Cell.o Zone.o Municipal.o Status_grid.o 
 PROG = Curses_City
